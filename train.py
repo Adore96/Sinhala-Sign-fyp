@@ -10,7 +10,7 @@ import argparse
 import numpy as np
 from imutils import paths
 import matplotlib.pyplot as plt
-from pyimagesearch.smallervggnet import SmallerVGGNet
+from VGGNet.smallervggnet import SmallerVGGNet
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import LabelBinarizer
 from keras.preprocessing.image import img_to_array
