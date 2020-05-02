@@ -1,5 +1,5 @@
 # USAGE
-# python classify.py --model pokedex.h5 --labelbin lb.pickle --image examples/charmander_counter.png
+# python classify.py --model sinhalasign.h5 --labelbin lb.pickle --image examples/charmander_counter.png
 
 # import the necessary packages
 from keras.preprocessing.image import img_to_array

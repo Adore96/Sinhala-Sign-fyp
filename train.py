@@ -1,5 +1,5 @@
 # USAGE
-# python train.py --dataset dataset --model pokedex.model --labelbin lb.pickle
+# python train.py --dataset dataset --model sinhalasign.model --labelbin lb.pickle
 
 # set the matplotlib backend so figures can be saved in the background
 import os
@@ -36,7 +36,7 @@ args = vars(ap.parse_args())
 
 # initialize the number of epochs to train for, initial learning rate,
 # batch size, and image dimensions
-EPOCHS = 4
+EPOCHS = 3
 INIT_LR = 1e-3
 BS = 32
 IMAGE_DIMS = (96, 96, 3)
@@ -122,12 +122,13 @@ f.close()
 plt.style.use("ggplot")
 plt.figure()
 N = EPOCHS
-plt.plot(np.arange(0, N), H.history["loss"], label="train_loss")
-plt.plot(np.arange(0, N), H.history["val_loss"], label="val_loss")
-plt.plot(np.arange(0, N), H.history["acc"], label="train_acc")
-plt.plot(np.arange(0, N), H.history["val_acc"], label="val_acc")
+plt.plot(np.arange(0, N), H.history["loss"], label="training loss")
+plt.plot(np.arange(0, N), H.history["val_loss"], label="validation loss")
+plt.plot(np.arange(0, N), H.history["acc"], label="training accuracy")
+plt.plot(np.arange(0, N), H.history["val_acc"], label="validation accuracy")
 plt.title("Training Loss and Accuracy")
 plt.xlabel("Epoch #")
 plt.ylabel("Loss/Accuracy")
 plt.legend(loc="upper left")
 plt.savefig(args["plot"])
+
