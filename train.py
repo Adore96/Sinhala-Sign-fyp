@@ -1,5 +1,5 @@
 # USAGE
-# python train.py --dataset dataset --model sinhalasign.model --labelbin lb.pickle
+# python train.py --dataset dataset --model sinhalasign.h5 --labelbin lb.pickle
 
 # set the matplotlib backend so figures can be saved in the background
 import os

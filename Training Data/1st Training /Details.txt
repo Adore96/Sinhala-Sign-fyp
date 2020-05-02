@@ -10,3 +10,6 @@ Epoch 2/3
 Epoch 3/3
 324/324 [==============================] - 250s 770ms/step - loss: 0.3269 - acc: 0.8870 - val_loss: 0.0521 - val_acc: 0.9827
 
+===============new image==============
+[INFO] classifying image...
+[INFO] ද්: 49.29% (හ)
