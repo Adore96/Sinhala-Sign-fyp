@@ -1,0 +1,31 @@
+Same number of images as first.
+
+EPOCHS = 10
+INIT_LR = 1e-3
+BS = 32
+IMAGE_DIMS = (96, 96, 3)
+
+Epoch 1/10
+324/324 [==============================] - 276s 852ms/step - loss: 1.1928 - acc: 0.6408 - val_loss: 0.9665 - val_acc: 0.7142
+Epoch 2/10
+324/324 [==============================] - 274s 846ms/step - loss: 0.4746 - acc: 0.8401 - val_loss: 0.1275 - val_acc: 0.9538
+Epoch 3/10
+324/324 [==============================] - 265s 819ms/step - loss: 0.2854 - acc: 0.9021 - val_loss: 0.1520 - val_acc: 0.9476
+Epoch 4/10
+324/324 [==============================] - 221s 683ms/step - loss: 0.2080 - acc: 0.9285 - val_loss: 0.1005 - val_acc: 0.9673
+Epoch 5/10
+324/324 [==============================] - 216s 668ms/step - loss: 0.1572 - acc: 0.9473 - val_loss: 0.1209 - val_acc: 0.9622
+Epoch 6/10
+324/324 [==============================] - 232s 717ms/step - loss: 0.1304 - acc: 0.9551 - val_loss: 0.0333 - val_acc: 0.9892
+Epoch 7/10
+324/324 [==============================] - 229s 708ms/step - loss: 0.1153 - acc: 0.9613 - val_loss: 0.0346 - val_acc: 0.9915
+Epoch 8/10
+324/324 [==============================] - 232s 717ms/step - loss: 0.0978 - acc: 0.9673 - val_loss: 0.1420 - val_acc: 0.9445
+Epoch 9/10
+324/324 [==============================] - 232s 717ms/step - loss: 0.0732 - acc: 0.9750 - val_loss: 0.0195 - val_acc: 0.9923
+Epoch 10/10
+324/324 [==============================] - 207s 638ms/step - loss: 0.0715 - acc: 0.9761 - val_loss: 0.0567 - val_acc: 0.9800
+
+===============new image==============same as 1st training
+[INFO] classifying image...
+[INFO] ද්: 91.02% (හ)

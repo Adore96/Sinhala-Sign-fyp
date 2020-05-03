@@ -1,5 +1,5 @@
 
-# python classify.py --model sinhalasign.h5 --labelbin lb.pickle --image examples/1.jpg
+# python classify.py --model sinhalasign.h5 --labelbin lb.pickle --image examples/2.jpg
 
 from keras.preprocessing.image import img_to_array
 from keras.models import load_model

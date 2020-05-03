@@ -1,3 +1,5 @@
+1st training on the made Dataset.
+
 EPOCHS = 3
 INIT_LR = 1e-3
 BS = 32
@@ -13,3 +15,4 @@ Epoch 3/3
 ===============new image==============
 [INFO] classifying image...
 [INFO] ද්: 49.29% (හ)
+
