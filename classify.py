@@ -43,7 +43,7 @@ idx = np.argmax(proba)
 label = lb.classes_[idx]
 
 
-word = "හ"
+word = ""
 
 # build the label and draw the label on the image
 label = "{}: {:.2f}% ({})".format(label, proba[idx] * 100, word)
@@ -53,5 +53,6 @@ cv2.putText(output, label, (10, 25),  cv2.FONT_HERSHEY_SIMPLEX,
 
 # show the output image
 print("[INFO] {}".format(label))
+# print(model.summary())
 cv2.imshow("Output", output)
 cv2.waitKey(0)

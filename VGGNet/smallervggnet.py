@@ -20,12 +20,13 @@ class SmallerVGGNet:
 
 		# if we are using "channels first", update the input shape
 		# and channels dimension
-		if K.image_data_format() == "channels_first":
+		# asked for a update in terminal
+		if K.image_data_format() == "channels_first":  #this is to check whether the input data is rgb and in the format.
 			inputShape = (depth, height, width)
 			chanDim = 1
 
 		# CONV => RELU => POOL
-		model.add(Conv2D(32, (3, 3), padding="same",
+		model.add(Conv2D(32, (3, 3), padding="same",  #extract 32 features in 3*3 matrix
 			input_shape=inputShape))
 		model.add(Activation("relu"))
 		model.add(BatchNormalization(axis=chanDim))

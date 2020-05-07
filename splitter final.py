@@ -4,7 +4,7 @@ import os
 from PIL import Image
 
 # place the movie name below,dont forget to mention the movie format also
-video = cv2.VideoCapture('movie.mov')
+video = cv2.VideoCapture('Videos/movie.mov')
 
 # before running the code sample make a file called 'data' in the same directory
 try:
