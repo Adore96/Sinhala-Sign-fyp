@@ -19,8 +19,18 @@ from keras.preprocessing.image import ImageDataGenerator
 import matplotlib
 from keras.utils import plot_model
 matplotlib.use("Agg")
+import tensorflow as tf
 
-# import the necessary packages
+# gpu_options = tf.GPUOptions(per_process_gpu_memory_fraction = 0.5)
+# sess = tf.Session(config=tf.ConfigProto(gpu_options= gpu_options,log_device_placement=True))
+import tensorflow as tf
+
+if tf.test.gpu_device_name():
+    print('Default GPU Device:{}'.format(tf.test.gpu_device_name()))
+
+else:
+   print("Please install GPU version of TF")
+
 
 # construct the argument parse and parse the arguments
 ap = argparse.ArgumentParser()
@@ -38,7 +48,7 @@ args = vars(ap.parse_args())
 # batch size, and image dimensions
 EPOCHS = 10
 INIT_LR = 1e-3
-BS = 32                     #batchsize
+BS = 50                     #batchsize was 32
 IMAGE_DIMS = (96, 96, 3)
 
 # initialize the data and labels
@@ -131,4 +141,3 @@ plt.xlabel("Epoch #")
 plt.ylabel("Loss/Accuracy")
 plt.legend(loc="upper left")
 plt.savefig(args["plot"])
-
