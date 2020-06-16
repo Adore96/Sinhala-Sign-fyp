@@ -119,6 +119,7 @@ print("[INFO] serializing network...")
 model.save(args["model"])
 plot_model(model, to_file='model.png', show_shapes=True)
 print("[INFO] Model Save Completed...")
+print(model.layers())
 
 # changed
 

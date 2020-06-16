@@ -42,17 +42,17 @@ class SmallerVGGNet:
 			chanDim = 1
 
 		# CONV => RELU => POOL
-		model.add(Conv2D(32, (3, 3), padding="same",  #extract 32 features in 3*3 matrix
-			input_shape=inputShape))
+		model.add(Conv2D(32, (3, 3), padding="same", input_shape=inputShape))
 		model.add(Activation("relu"))
 		model.add(BatchNormalization(axis=chanDim))
 		model.add(MaxPooling2D(pool_size=(3, 3)))
-		model.add(Dropout(0.25))
+		model.add(Dropout(0.25)) #can remove this line if want used it to remove overfitting
 
 		# (CONV => RELU) * 2 => POOL
 		model.add(Conv2D(64, (3, 3), padding="same"))
 		model.add(Activation("relu"))
 		model.add(BatchNormalization(axis=chanDim))
+
 		model.add(Conv2D(64, (3, 3), padding="same"))
 		model.add(Activation("relu"))
 		model.add(BatchNormalization(axis=chanDim))
@@ -63,6 +63,7 @@ class SmallerVGGNet:
 		model.add(Conv2D(128, (3, 3), padding="same"))
 		model.add(Activation("relu"))
 		model.add(BatchNormalization(axis=chanDim))
+
 		model.add(Conv2D(128, (3, 3), padding="same"))
 		model.add(Activation("relu"))
 		model.add(BatchNormalization(axis=chanDim))
