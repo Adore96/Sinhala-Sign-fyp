@@ -65,7 +65,7 @@ class SmallerVGGNet:
 		model.add(Activation("relu"))
 		model.add(BatchNormalization(axis=chanDim))
 
-			#5st Layer
+		#5st Layer
 		model.add(Conv2D(128, (3, 3), padding="same"))
 		model.add(Activation("relu"))
 		model.add(BatchNormalization(axis=chanDim))
