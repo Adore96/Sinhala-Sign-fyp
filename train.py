@@ -19,7 +19,7 @@ from keras.preprocessing.image import ImageDataGenerator
 import matplotlib
 from keras.utils import plot_model
 matplotlib.use("Agg")
-import tensorflow as tf
+
 
 # gpu_options = tf.GPUOptions(per_process_gpu_memory_fraction = 0.5)
 # sess = tf.Session(config=tf.ConfigProto(gpu_options= gpu_options,log_device_placement=True))
@@ -71,7 +71,7 @@ for imagePath in imagePaths:
         data.append(image)
 
         # extract the class label from the image path and update the
-        # labels list
+        # labels list.
         label = imagePath.split(os.path.sep)[-2]
         labels.append(label)
     except Exception as e:
@@ -117,6 +117,9 @@ H = model.fit_generator(
 # save the model to disk
 print("[INFO] serializing network...")
 model.save(args["model"])
+
+
+
 plot_model(model, to_file='model.png', show_shapes=True)
 print("[INFO] Model Save Completed...")
 print(model.layers())
