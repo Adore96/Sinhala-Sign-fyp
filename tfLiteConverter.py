@@ -1,5 +1,7 @@
 
 import tensorflow as tf
-converter = tf.lite.TFLiteConverter.from_saved_model("sinhalasign.h5")
-tfmodel = converter.convert()
-open ('model.tflite' , "wb") .write(tfmodel)
+
+converter = tf.lite.TFLiteConverter.from_keras_model_file( 'sinhalasign6.h5' ) # Your model's name
+model = converter.convert()
+file = open( 'model6.tflite' , 'wb' )
+file.write( model )
