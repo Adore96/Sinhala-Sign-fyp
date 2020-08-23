@@ -1,5 +1,5 @@
 # USAGE
-# python train.py --dataset dataset --model sinhalasign.h5 --labelbin lb.pickle
+# python train.py --dataset dataset --model sinhalasign6.h5 --labelbin lb.pickle
 
 # set the matplotlib backend so figures can be saved in the background
 import os
@@ -40,7 +40,7 @@ ap.add_argument("-m", "--model", required=True,
                 help="path to output model")
 ap.add_argument("-l", "--labelbin", required=True,
                 help="path to output label binarizer")
-ap.add_argument("-p", "--plot", type=str, default="plot.png",
+ap.add_argument("-p", "--plot", type=str, default="plot6.png",
                 help="path to output accuracy/loss plot")
 args = vars(ap.parse_args())
 
@@ -122,7 +122,7 @@ model.save(args["model"])
 
 plot_model(model, to_file='model.png', show_shapes=True)
 print("[INFO] Model Save Completed...")
-print(model.layers())
+#print(model.layers())
 
 # changed
 
@@ -145,3 +145,5 @@ plt.xlabel("Epoch #")
 plt.ylabel("Loss/Accuracy")
 plt.legend(loc="upper left")
 plt.savefig(args["plot"])
+
+print("[INFO] Image saving successful.")
