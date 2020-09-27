@@ -1,5 +1,5 @@
 # USAGE
-# python train.py --dataset dataset --model sinhalasign6.h5 --labelbin lb.pickle
+# python train.py --dataset dataset --model sinhalasign7.h5 --labelbin lb.pickle
 
 # set the matplotlib backend so figures can be saved in the background
 import os
@@ -19,7 +19,6 @@ from keras.preprocessing.image import ImageDataGenerator
 import matplotlib
 from keras.utils import plot_model
 matplotlib.use("Agg")
-
 
 # gpu_options = tf.GPUOptions(per_process_gpu_memory_fraction = 0.5)
 # sess = tf.Session(config=tf.ConfigProto(gpu_options= gpu_options,log_device_placement=True))
@@ -46,7 +45,7 @@ args = vars(ap.parse_args())
 
 # initialize the number of epochs to train for, initial learning rate,
 # batch size, and image dimensions
-EPOCHS = 8      #final Number
+EPOCHS = 9     #final Number
 INIT_LR = 1e-3
 BS = 64                     #batchsize was 32
 IMAGE_DIMS = (96, 96, 3)
@@ -118,13 +117,9 @@ H = model.fit_generator(
 print("[INFO] serializing network...")
 model.save(args["model"])
 
-
-
-plot_model(model, to_file='model.png', show_shapes=True)
+plot_model(model, to_file='model7.png', show_shapes=True)
 print("[INFO] Model Save Completed...")
 #print(model.layers())
-
-# changed
 
 # save the label binarizer to disk
 print("[INFO] serializing label binarizer...")
