@@ -1,23 +1,26 @@
 # USAGE
 # python train.py --dataset dataset --model sinhalasign7.h5 --labelbin lb.pickle
 
+import argparse
 # set the matplotlib backend so figures can be saved in the background
 import os
-import cv2
 import pickle
 import random
-import argparse
+
+import cv2
+import matplotlib
+import matplotlib.pyplot as plt
 import numpy as np
 from imutils import paths
-import matplotlib.pyplot as plt
-from VGGNet.smallervggnet import SmallerVGGNet
-from sklearn.model_selection import train_test_split
-from sklearn.preprocessing import LabelBinarizer
-from keras.preprocessing.image import img_to_array
 from keras.optimizers import Adam
 from keras.preprocessing.image import ImageDataGenerator
-import matplotlib
+from keras.preprocessing.image import img_to_array
 from keras.utils import plot_model
+from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import LabelBinarizer
+
+from VGGNet.smallervggnet import SmallerVGGNet
+
 matplotlib.use("Agg")
 
 # gpu_options = tf.GPUOptions(per_process_gpu_memory_fraction = 0.5)
@@ -28,8 +31,7 @@ if tf.test.gpu_device_name():
     print('Default GPU Device:{}'.format(tf.test.gpu_device_name()))
 
 else:
-   print("Please install GPU version of TF")
-
+    print("Please install GPU version of TF")
 
 # construct the argument parse and parse the arguments
 ap = argparse.ArgumentParser()
@@ -45,9 +47,9 @@ args = vars(ap.parse_args())
 
 # initialize the number of epochs to train for, initial learning rate,
 # batch size, and image dimensions
-EPOCHS = 9     #final Number
+EPOCHS = 9  # final Number
 INIT_LR = 1e-3
-BS = 64                     #batchsize was 32
+BS = 64  # batchsize was 32
 IMAGE_DIMS = (96, 96, 3)
 
 # initialize the data and labels
@@ -75,7 +77,6 @@ for imagePath in imagePaths:
         labels.append(label)
     except Exception as e:
         print(str(e))
-
 
 # scale the raw pixel intensities to the range [0, 1]
 data = np.array(data, dtype="float") / 255.0
@@ -119,7 +120,7 @@ model.save(args["model"])
 
 plot_model(model, to_file='model7.png', show_shapes=True)
 print("[INFO] Model Save Completed...")
-#print(model.layers())
+# print(model.layers())
 
 # save the label binarizer to disk
 print("[INFO] serializing label binarizer...")

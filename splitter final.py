@@ -1,7 +1,6 @@
-import cv2
-import numpy as np
 import os
-from PIL import Image
+
+import cv2
 
 # place the movie name below,dont forget to mention the movie format also
 video = cv2.VideoCapture('Videos/movie.mov')
@@ -18,9 +17,8 @@ currentframe = 0
 total = 0
 total = int(video.get(cv2.CAP_PROP_FRAME_COUNT))
 
-
 # saving the images
-while currentframe <= total-1:
+while currentframe <= total - 1:
     ret, frame = video.read()
     name = './data/frame' + str(currentframe) + '.jpg'
     print('creating ' + name)
