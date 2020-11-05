@@ -1,6 +1,8 @@
 # python classify.py --model sinhalasign6.h5 --labelbin lb.pickle --image TestingImages/5.jpg
 # 1 ,
 
+# python classify.py --model sinhalasign6.h5 --labelbin labels.txt --image TestingImages/5.jpg
+
 import argparse
 import pickle
 
