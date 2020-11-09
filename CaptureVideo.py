@@ -1,6 +1,6 @@
 import cv2
 
-cap = cv2.VideoCapture(0)  # give the file name you need to read or the camera number(try with 0 , -1,1)
+cap = cv2.VideoCapture(1)  # give the file name you need to read or the camera number(try with 0 , -1,1)
 fourcc = cv2.VideoWriter_fourcc('X', 'V', 'I', 'D')
 out = cv2.VideoWriter('WebcamVideos/output.mp4', fourcc, 20.0, (
 1280, 720))  # name of the output , fourcc format(fourcc.org), number of frames /sec , size of the current video

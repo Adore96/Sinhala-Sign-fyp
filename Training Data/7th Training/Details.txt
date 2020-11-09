@@ -1,0 +1,16 @@
+EPOCHS = 5
+INIT_LR = 1e-3
+BS = 64                  
+IMAGE_DIMS = (96, 96, 3)
+
+
+Epoch 1/5
+ - 9138s - loss: 0.8583 - acc: 0.7363 - val_loss: 0.3538 - val_acc: 0.9047
+Epoch 2/5
+ - 9098s - loss: 0.3730 - acc: 0.9166 - val_loss: 0.0323 - val_acc: 0.9412
+Epoch 3/5
+ - 9170s - loss: 0.3958 - acc: 0.9433 - val_loss: 0.0161 - val_acc: 0.9531
+Epoch 4/5
+ - 9154s - loss: 0.4734 - acc: 0.9556 - val_loss: 20.1820 - val_acc: 0.8281
+Epoch 5/5
+ - 9410s - loss: 0.4288 - acc: 0.9671 - val_loss: 0.0528 - val_acc: 0.9702
