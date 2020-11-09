@@ -21,11 +21,18 @@ tab_control.add(tab2, text='Video Identifier')
 tab_control.add(tab3, text='Contributions')
 tab_control.add(tab4, text='About Us')
 
+
+# Functions starting///////////////////////////////////////////////////////////////////////////////////////////////////// Functions
+
+def check():
+    print('ssdawd')
+
 # tab1 items//////////////////////////////////////////////////////////////////////////////////////////////////////////// Image Identifier
 
 UploadImagelbl = Label(tab1, text='Upload Image', bg="black", fg="white", font=("Helvetica"), )
 UploadImagelbl.place(x=20, y=20)
-openGallerybtn = Button(tab1, text='        Click to Open Gallery         ', bg='#ffb3fe')
+
+openGallerybtn = Button(tab1, text='        Click to Open Gallery         ', bg='#ffb3fe',command=check)
 openGallerybtn.place(x=120, y=20)
 resetbtn = Button(tab1, text='      Reset Image      ')
 resetbtn.place(x=330, y=20)
@@ -35,7 +42,7 @@ canvas.pack()
 img1 = Image.open("sampleImage.jpg")
 img1 = img1.resize((300, 300), Image.ANTIALIAS)
 img1 = ImageTk.PhotoImage(img1)
-canvas.create_image(0, 0, anchor=NW, image=img1)
+# canvas.create_image(0, 0, anchor=NW, image=img1)
 canvas.place(x=120, y=50)
 
 UploadImagelbl3 = Label(tab1, text='Identified Sign', bg="black", fg="white", font=("Helvetica"))
@@ -108,8 +115,10 @@ lbl44.place(x=210, y=20)
 
 # Tab 4 Ends ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-tab_control.pack(expand=1, fill='both')
-window.mainloop()
+
 
 # https://machinelearningmastery.com/how-to-generate-random-numbers-in-python/ -> generating random numbers
 # https://effbot.org/tkinterbook/button.htm -> setting values to the buttons
+
+tab_control.pack(expand=1, fill='both')
+window.mainloop()
